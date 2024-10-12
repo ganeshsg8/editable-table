@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Divs Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack divs vertically */
+            align-items: center; /* Center align */
+            margin: 20px;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease;
+            margin: 5px 0; /* Add some spacing between boxes */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+</div>
+<button onclick="switchDivs()">Switch Divs</button>
+
+<script>
+    function switchDivs() {
+        const boxes = document.querySelectorAll('.box');
+        const first = boxes[0];
+        const second = boxes[1];
+
+        // Apply the transition effect
+        first.style.transform = 'translateY(50px)';
+        second.style.transform = 'translateY(-50px)';
+
+        // Wait for the transition to finish
+        setTimeout(() => {
+            // Swap positions
+            const parent = first.parentNode;
+            parent.insertBefore(second, first);
+            first.style.transform = 'translateY(0)';
+            second.style.transform = 'translateY(0)';
+        }, 500); // Match the timeout to the CSS transition duration
+    }
+</script>
+
+</body>
+</html>

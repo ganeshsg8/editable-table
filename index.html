@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Table</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-headbar">
+            <div class="table-heading">
+                Chemical Supplies
+            </div>
+            <div class="table-action-items">
+                <img class="icon" src="icons/plus.svg" alt="plus Icon" width="24" height="24"
+                    style="vertical-align: middle;" id="add-icon">
+                <div class="icon icon-wrapper fill-blue" id="arrow-down-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="24" height="24"
+                        fill="currentColor">
+                        <path
+                            d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                    </svg>
+                </div>
+                <div class="icon icon-wrapper rotate180 fill-grey " id="arrow-up-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="24"
+                        height="24">
+                        <path
+                            d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                    </svg>
+                </div>
+                <img class="icon" src="icons/trash.svg" alt="delete Icon" width="24" height="24"
+                    style="vertical-align: middle;" id="delete-icon">
+
+                <img class="icon" src="icons/rotate-left.svg" alt="refresh Icon" width="24" height="24"
+                    style="vertical-align: middle;" id="refresh-icon">
+
+                <img class="icon" src="icons/save.png" alt="save Icon" width="24" height="24"
+                    style="vertical-align: middle;" id="save-icon">
+            </div>
+        </div>
+        <div id="grid-table">
+            <div class="table-container table-container-header">
+                <div class="fill-grey icon-wrapper icon icon-clm table-cell table-row-cell">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20"
+                        fill="currentColor">
+                        <path
+                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                    </svg>
+                </div>
+                <div class="id-clm table-cell"></div>
+                <div class="chemical-clm table-cell">Chemical Name</div>
+                <div class="vendor-clm table-cell">Vendor</div>
+                <div class="density-clm table-cell">Density</div>
+                <div class="viscosity-clm table-cell">Viscosity</div>
+                <div class="packaging-clm table-cell">Packaging</div>
+                <div class="pack-clm table-cell">Pack <br />Size</div>
+                <div class="unit-clm table-cell">Unit</div>
+                <div class="quantity-clm table-cell">Quantity</div>
+                <!-- next row -->
+                <div class="fill-grey icon-wrapper icon icon-clm">
+                </div>
+                <div class="id-clm table-cell"></div>
+                <div class="chemical-clm table-cell"></div>
+                <div class="vendor-clm table-cell"></div>
+                <div class="density-clm table-cell">
+                    <div class="grey-txt">g/m³</div>
+                </div>
+                <div class="viscosity-clm table-cell">
+                    <div class="grey-txt">m²/s</div>
+                </div>
+                <div class="packaging-clm table-cell"></div>
+                <div class="pack-clm table-cell"></div>
+                <div class="unit-clm table-cell"></div>
+                <div class="quantity-clm table-cell"></div>
+            </div>
+            <div id="grid-table-row"></div>
+        </div>
+    </div>
+    <div id="model">
+        <div class="model-body">
+            <div class="model-header">Add Row</div>
+            <form id="addRowForm">
+                <div class="model-form">
+                    <div>
+                        <label for="name">id :</label>
+                        <input type="text" id="id" name="id" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="name">chemicalName :</label>
+                        <input type="text" id="chemicalName" name="chemicalName" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="vender">vender :</label>
+                        <input type="text" id="vender" name="vender" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="density">density :</label>
+                        <input type="number" id="density" name="density" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="viscosity">viscosity :</label>
+                        <input type="number" id="viscosity" name="viscosity" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="packaging">packaging :</label>
+                        <input type="text" id="packaging" name="packaging" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="packSize">packSize :</label>
+                        <input type="text" id="packSize" name="packSize" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="unit">unit :</label>
+                        <input type="num" id="unit" name="unit" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <label for="quantity">quantity :</label>
+                        <input type="number" id="quantity" name="quantity" class="inpt-text" required >
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                        <button type="button" id="cancelButton">cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
